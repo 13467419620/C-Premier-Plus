@@ -5,16 +5,20 @@ int main()
 {
     char ch;
 
-    while(ch=(cin.get()) != '@')
+    while((ch=cin.get()) != '@')
     {
         if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
         {
             if (isupper(ch))
-                cout << tolower(ch);
+                cout << char(tolower(ch));
             else
-                cout << toupper(ch);
+                cout << char(toupper(ch));
             continue;
-        } 
+        }
+
+        if(isdigit(ch))
+            continue;
+
         cout << ch ;
     }
 }
